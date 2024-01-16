@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aliceblue;
+        }
+        h2{
+            display: flex;
+            justify-content: center;
+            font-family: math;
+        }
+        #container {
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: cursive;
+        }
+
+        #like {
+            height: 57px;
+            margin-left: 8px;
+        }
+
+        #child {
+            height: 61px;
+            width: 150px;
+            border: 2px solid red;
+            border-radius: 10px;
+        }
+
+        #child button {
+            background: none;
+            border: none;
+        }
+
+        #h {
+            height: 42px;
+            position: relative;
+            top: -58px;
+            width: 60px;
+            left: 92px;
+            font-size: 34px;
+        }
+
+        #likedby {
+            margin-top: -36px;
+            height: 30px;
+            color: #f50c62;
+}
+        .passage{
+            width: 581px;
+        }
+        
+        @media screen and (max-width:380px) { 
+            .passage {
+                      width: 340px;
+                      height: 164px;
+                      margin-left: -91px;
+                     }
+                    }
+    </style>
+</head>
+
+<body>
+    <h2>SIMPLE LIKE BUTTON</h2>
+    <div id="container">
+        <div id="child">
+            <button onclick="clicked()"><img src="icons8-thumbs-up-96.png" id="like"></button>
+            <div id="h">0</div>
+            <div id="likedby"></div>
+            <div class="passage">
+                <li>When you click on like icon it will animate</li>
+                <li>And changes the border color (i.e Green) as well it provides a massage</li>
+                <li>After 2 second border color becomes as it is (i.e red) and hides the previous massage!</li>
+                <li>And it keeps going till infinite</li>
+          </div>
+        </div>
+    </div>
+   
+</body>
+<script>
+    let like = document.getElementById("like");
+    ctr = 1;
+    function clicked() {
+        let j = ctr++;
+        let h = document.getElementById("h").innerText = j;
+        let like = document.getElementById("like");
+
+        like.style.transform = "rotate(-45deg)"
+        like.style.transition = "200ms"
+        setInterval(k, 500)
+        function k() {
+            like.style.transform = "rotate(0deg)"
+            like.style.transition = "200ms"
+        }
+        like.src = "icons8-facebook-like-96.png";
+        child.style.border = "2px solid green";
+        let likedby = document.getElementById("likedby").innerText = "liked by user xyz";
+
+         cleareLikeButton=()=>{
+             like.src="icons8-thumbs-up-96.png";  
+             let likedby = document.getElementById("likedby").innerText = "";
+             child.style.border = "2px solid red";
+            }
+                setTimeout(cleareLikeButton,1000);
+    }
+</script>
+
+</html>
